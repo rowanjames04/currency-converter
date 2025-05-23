@@ -1,4 +1,4 @@
-# Currency Converter CLI
+# Currency Converter
 
 [Python 3.x](https://www.python.org/downloads/) | [MIT License](LICENSE)
 
