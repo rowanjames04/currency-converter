@@ -1,10 +1,10 @@
 import requests
 import csv
 import os
-#comment
+
 pyfile_dir = os.path.dirname(os.path.abspath(__file__))
 
-api_key = '712RA7HCG2ZEBDZF'
+api_key = 'I1LQZODF7N8OEVPG'
 file = os.path.join(pyfile_dir, 'physical_currency_list.csv')
 
 def ccstate(code):
@@ -69,10 +69,10 @@ while True:
         print("Try Again! Please Enter a Valid Code")
         to_c = input(f"Enter the \033[1mCurrency Code\033[0m of the currency you want to convert to: ").upper()
 
-    url = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=' + from_c + '&to_currency=' + to_c + '&apikey=' + api_key
+    url = f"https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency={from_c}&to_currency={to_c}&apikey={api_key}"
 
     results = requests.get(url).json()
     rate = float(results['Realtime Currency Exchange Rate']['5. Exchange Rate'])
 
-    print(str(amount_from) + " " + returncurrencyname(currencydata, from_c) + " equals " + str(amount_from * rate) + " " + returncurrencyname(currencydata, to_c))
+    print(f"{amount_from} {returncurrencyname(currencydata, from_c)} equals {str(amount_from * rate)} {returncurrencyname(currencydata, to_c)}")
 
