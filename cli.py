@@ -8,11 +8,13 @@ def parse_args():
         dest="from_currency", 
         help="Currency to convert from"
     )
+    
     parser.add_argument(
         "--to", 
         dest="to_currency", 
         help="Currency to convert to"
     )
+
     parser.add_argument(
         "--amount", 
         type=float, 

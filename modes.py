@@ -38,7 +38,12 @@ def interactive_mode():
             to_c = input(f"Enter the \033[1mCurrency Code\033[0m of the currency you want to convert to: ").upper()
         
         
-        new_amount = convert_currency(from_c, to_c, amount)
+        new_amount = convert_currency(
+            from_c, 
+            to_c, 
+            amount
+        )
+
         print(f"{amount} {client.get_name(from_c)} equals {str(new_amount)} {client.get_name(to_c)}")
 
 def args_mode(args):
@@ -52,10 +57,10 @@ def args_mode(args):
         print("Invalid TO currency code")
         return
     
-    result = convert_currency(
-            args.from_currency.upper(),
-            args.to_currency.upper(),
-            args.amount,
-        )
+    new_amount = convert_currency(
+        args.from_currency.upper(),
+        args.to_currency.upper(),
+        args.amount,
+    )
     
-    print(f"{args.amount} {args.from_currency.upper()} = {result:.2f} {args.to_currency.upper()}")
+    print(f"{args.amount} {args.from_currency.upper()} = {new_amount:.2f} {args.to_currency.upper()}")
