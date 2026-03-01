@@ -4,7 +4,7 @@ import os
 
 pyfile_dir = os.path.dirname(os.path.abspath(__file__))
 
-api_key = ''
+api_key = os.getenv("API_KEY")
 file = os.path.join(pyfile_dir, 'physical_currency_list.csv')
 
 def ccstate(code):
