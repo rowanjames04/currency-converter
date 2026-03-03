@@ -1,4 +1,4 @@
-from core import is_yes_or_no, convert_currency
+from helpers import is_yes_or_no, convert_currency
 from client import CurrencyCodeGrabber
 
 def interactive_mode():
